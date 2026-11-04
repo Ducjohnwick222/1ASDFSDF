@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@drawable/bg_header" android:gravity="center_vertical"
+        android:orientation="horizontal" android:padding="20dp" android:paddingBottom="28dp">
+        <TextView android:id="@+id/btnHeaderBack" android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_circle_glass" android:clickable="true" android:focusable="true" android:gravity="center" android:text="←" android:textColor="@color/white" android:textSize="20sp" android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="14dp" android:text="Thêm khoản chi"
+            android:textColor="@color/white" android:textSize="22sp" android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:clipToPadding="false">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:cardCornerRadius="22dp" app:cardElevation="4dp">
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="18dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Tên khoản chi" android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginTop="6dp" android:background="@drawable/bg_input"
+                        android:hint="Ví dụ: Ăn trưa" android:inputType="text"
+                        android:maxLines="1" android:paddingHorizontal="16dp" android:textSize="15sp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp" android:text="Số tiền (VNĐ)"
+                        android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <EditText
+                        android:id="@+id/edtAmount"
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginTop="6dp" android:background="@drawable/bg_input"
+                        android:hint="Chỉ nhập số, ví dụ: 45000" android:inputType="number"
+                        android:maxLines="1" android:paddingHorizontal="16dp" android:textSize="15sp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp" android:text="Danh mục chi"
+                        android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <Spinner
+                        android:id="@+id/spCategory"
+                        android:layout_width="match_parent" android:layout_height="50dp"
+                        android:layout_marginTop="6dp" android:background="@drawable/bg_spinner"
+                        android:paddingStart="8dp" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp" android:text="Ngày chi tiêu"
+                        android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <DatePicker
+                        android:id="@+id/datePicker"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:calendarViewShown="false" android:datePickerMode="spinner" />
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp" android:text="Ghi chú (không bắt buộc)"
+                        android:textColor="@color/text_secondary" android:textSize="13sp" />
+                    <EditText
+                        android:id="@+id/edtNote"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp" android:background="@drawable/bg_input"
+                        android:gravity="top" android:hint="Nhập ghi chú (nhiều dòng)..."
+                        android:inputType="textMultiLine" android:minLines="3"
+                        android:padding="16dp" android:textSize="15sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent" android:layout_height="56dp"
+                android:layout_marginTop="18dp" android:background="@drawable/bg_btn_primary"
+                android:text="Lưu khoản chi" android:textAllCaps="false"
+                android:textColor="@color/white" android:textSize="17sp" android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
